@@ -51,7 +51,7 @@ class Tweet:
 	def is_valid_tweet(self) -> bool:
 		tweet_id = self.get_tweet_id()
 		api_endpoint = f"https://api.twitter.com/2/tweets?ids={tweet_id}"
-		request_headers = { "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAPPFOAEAAAAApclDFCXIO%2BfFbl15yS%2BbMlcp6nY%3DcaqujqfBPbr2Tsld3BbYCRRYDYoJhC7IhcM0fPl4pYUgtbvnux" }
+		request_headers = { "Authorization": "Bearer" }
 		response = requests.get(api_endpoint, headers=request_headers, timeout=5).json()
 		if "errors" in response:
 			return False
