@@ -1,0 +1,10 @@
+
+.DS_Store
+app/config.py
+keystore
+tbears/update.sh
+tbears/txbyhash.sh
+tbears/keystore_test1
+tbears/fund.sh
+tbears/deploy.sh
+*.pyc
