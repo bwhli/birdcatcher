@@ -21,7 +21,7 @@ class Tweet:
 		if self.is_valid_tweet() == True:
 			tweet_id = self.get_tweet_id()
 			api_endpoint = f"https://api.twitter.com/2/tweets?ids={tweet_id}&tweet.fields=author_id,conversation_id,created_at,source"
-			request_headers = { "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAPPFOAEAAAAApclDFCXIO%2BfFbl15yS%2BbMlcp6nY%3DcaqujqfBPbr2Tsld3BbYCRRYDYoJhC7IhcM0fPl4pYUgtbvnux" }
+			request_headers = { "Authorization": "Bearer" }
 			response = requests.get(api_endpoint, headers=request_headers, timeout=5).json()["data"][0]
 			return json.dumps(response, ensure_ascii=False, sort_keys=True)
 		else:
@@ -31,7 +31,7 @@ class Tweet:
 		tweet_id = self.get_tweet_id()
 		headers = {
 			'Content-Type': 'application/json',
-			'Authorization': '92020c23-71bc-41e9-bf63-de2fbec7f94f',
+			'Authorization': '',
 		}
 		data = { "tweetId": str(tweet_id) }
 		response = requests.post('https://tweetpik.com/api/images', headers=headers, data=json.dumps(data)).json()
